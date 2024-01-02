@@ -22,16 +22,30 @@
                 <menu class="left no-wrap">
                     <a>Extract URL</a>
                     <a>View Source</a>
-                    <a>About Us</a>
+                    <a href="#AboutUs">About Us</a>
                 </menu>
             </button>
         </nav>
     </header>
 
-    <main id="main">
+
+
+    <main class="responsive">
+      <!-- Modal -->
+      <article class="border secondary modal" id="aboutModal">
+          <a class="chip fill">
+                <i class="primary-text">info</i>
+            About SadInspector</a>
+          <p>This program aim to allow penetration Tester or Security Engineers to analysis web application and sites, in order to evaluate their security standing and standards.</p>
+          <small>Powered by Sadsec.</small>
+          <button onclick="closeModal()">Close</button>
+      </article>
+      <!-- End of Modal -->
+      
       <!-- main part  -->
-      <iframe src="" title="description" id="rd" width="100%" height="100%"> </iframe>
     </main>  
+    
+    
     <footer>
         <div class="row">
             <button class="circle left-round bottom-round extra small-elevate" id="toolkitBtn">
@@ -39,9 +53,9 @@
             </button>
             <div class="max field border">
                 <input type="text" placeholder="Target" id="input" value="">
-                <span class="helper">Enter a target URL</span>
+                <span class="helper">Powered by SadSec</span>
             </div>
-            <button class="circle right-round top-round extra small-elevate" id="attackBtn" onclick="pInput()">
+            <button class="circle right-round top-round extra small-elevate" id="attackBtn">
                 <i>swords</i>
             </button>
         </div>

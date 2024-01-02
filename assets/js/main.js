@@ -1,28 +1,15 @@
-const input = document.getElementById("input")
-
-/*
-function processInput() {
-    var value = document.createTextNode(input.value)
-    var main = document.getElementById("main")
-    
-    if (main.innerHTML != "") {
-        main.innerHTML = ""
-        main.appendChild(value)
-       var newLine = document.createElement("br")
-       main.appendChild(newLine)
-       input.value = ""
-       return
-    }
-    
-    main.appendChild(value)
-    var newLine = document.createElement("br")
-    main.appendChild(newLine)
-    input.value = ""
+// Add these functions to handle the modal
+function openModal() {
+  const modal = document.getElementById('aboutModal');
+  modal.style.display = 'block';
 }
-*/
 
-
-function pInput() {
-     var rd = document.getElementById("rd")
-     rd.setAttribute("src", input.value);
+function closeModal() {
+  const modal = document.getElementById('aboutModal');
+  modal.style.display = 'none';
 }
+
+// ... your existing JavaScript ...
+
+// Add a listener to the "About Us" menu item
+document.querySelector('a[href="#AboutUs"]').addEventListener('click', openModal);

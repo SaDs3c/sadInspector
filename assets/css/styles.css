@@ -16,7 +16,8 @@ main {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  height: 100px;
   bottom: 0;
   padding: 1em 10px;
   width: 100%;
@@ -26,5 +27,18 @@ footer {
 .circle {
   background-color: aliceblue;
   color: red;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
 }
 
