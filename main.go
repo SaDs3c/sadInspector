@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"fmt"
+	"os"
 	"os/exec"
+	"strings"
 	"time"
 
 	"golang.org/x/net/html"
@@ -33,11 +36,36 @@ func main() {
 		return
 	}
 
-	fmt.Println("\n=============== Extracted Links ==============")
-	for _, link := range links {
-		fmt.Println(link)
-	}
+	// fmt.Println("\n=============== Extracted Links ==============")
+	// for _, link := range links {
+	// 	fmt.Println(link)
+	// }
 	// fmt.Println(string(source_code))
+
+	numLinks := len(links)
+	fmt.Printf("\nNumber of Extracted Links: %d\n", numLinks)
+
+	stopAnimation()
+
+	// Ask if the user wants to save the links in a file
+
+	saveToFile := askYesNo("Do you want to save the links in a file? (y/n)")
+
+	if saveToFile {
+		// Ask for the filename
+		fmt.Print("Enter the filename to save the links: ")
+		scanner := bufio.NewScanner(os.Stdin)
+		scanner.Scan()
+		filename := scanner.Text()
+
+		// Save links to the file
+		err := saveLinksToFile(filename, links)
+		if err != nil {
+			fmt.Println("Error saving links to file:", err)
+		} else {
+			fmt.Printf("Links saved to %s\n", filename)
+		}
+	}
 }
 
 func curlTarget(url string) ([]byte, error) {
@@ -94,4 +122,32 @@ func extractLinks(htmlContent []byte) ([]string, error) {
 
 	extract(doc)
 	return links, nil
+}
+
+func askYesNo(question string) bool {
+	fmt.Print(question + " ")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	response := strings.ToLower(scanner.Text())
+	return response == "y" || response == "yes"
+}
+
+func saveLinksToFile(filename string, links []string) error {
+	file, err := os.Create(filename)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	writer := bufio.NewWriter(file)
+	defer writer.Flush()
+
+	for _, link := range links {
+		_, err := writer.WriteString(link + "\n")
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
 }
