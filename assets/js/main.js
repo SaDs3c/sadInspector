@@ -1,5 +1,12 @@
-const input = document.getElementById("input") // take url
-const attackBtn = document.getElementById("attackBtn")
+console.log('Script beginnings execution here.');
+
+// Variables
+let OfficialName = "Sad Inspector"
+let urlLogs = [];
+
+// Grab DOMs
+const input = document.getElementById("input") // Take in Url
+const attackBtn = document.getElementById("attackBtn") // attackBtn
 
 function openModal() {
   const modal = document.getElementById('aboutModal');
