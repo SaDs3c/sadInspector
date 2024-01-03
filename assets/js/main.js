@@ -1,4 +1,5 @@
-const input = document.getElementById("input")
+const input = document.getElementById("input") // take url
+const attackBtn = document.getElementById("attackBtn")
 
 function openModal() {
   const modal = document.getElementById('aboutModal');
