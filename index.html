@@ -20,9 +20,9 @@
             <button class="circle default">
                 <i>menu</i>
                 <menu class="left no-wrap">
-                    <a>Extract URL</a>
-                    <a>View Source</a>
-                    <a href="#AboutUs">About Us</a>
+                    <a data-extract-url>Extract URL</a>
+                    <a data-view-source>View Source</a>
+                    <a data-about-us href="#AboutUs">About Us</a>
                 </menu>
             </button>
         </nav>
@@ -42,21 +42,21 @@
       </article>
       <!-- End of Modal -->
       
-      <iframe src="" title="description" id="rd" width="100%" height="100%"> </iframe>
+      <iframe data-web-view src="" title="description" id="rd" width="100%" height="100%"> </iframe>
       <!-- main part  -->
     </main>  
     
     
     <footer>
         <div class="row">
-            <button class="circle left-round bottom-round extra small-elevate" id="toolkitBtn">
+            <button data-toolkit-btn class="circle left-round bottom-round extra small-elevate" id="toolkitBtn">
                 <i>shield</i>
             </button>
             <div class="max field border">
-                <input type="text" placeholder="Target" id="input" value="">
+                <input data-url-input type="text" value="" id="input" />
                 <span class="helper">Powered by SadSec</span>
             </div>
-            <button class="circle right-round top-round extra small-elevate" id="attackBtn" onclick="pInput()">
+            <button data-attack-btn class="circle right-round top-round extra small-elevate" id="attackBtn">
                 <i>swords</i>
             </button>
         </div>
