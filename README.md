@@ -8,3 +8,7 @@ sadInspector is a web application that can help with target analysis on websites
 
 This web app as been abandoned :( 
     alternatively a cli tool will be continuted, serving same purpose.
+
+# SadInspector Cli
+
+sadInspector is a cli tool that can help with target analysis on websites and webapplications.
