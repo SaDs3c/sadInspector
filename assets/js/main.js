@@ -1,5 +1,6 @@
 console.log('Script beginnings execution here.');
 
+
 // Variables
 let OfficialName = "Sad Inspector"
 let urlLogs = [];
@@ -16,17 +17,21 @@ const web_view = document.querySelector("[data-web-view]");
 
 // Event Listeners
 attack_btn.addEventListener("click", () => {
-  web_view.setAttribute("src", input.value)
+  if (url_input.value.trim() === '') {
+    alert('No input given');
+  } else {
+    web_view.setAttribute("src", url_input.value);
+  }
 });
-
 extract_url.addEventListener("click", () => {
-  alert("Extract urls")
+  alert("Extract urls");
 });
-
 view_source.addEventListener("click", () => {
-  alert("View Source Code")
+  alert("View Source Code");
 });
-
+toolkit_btn.addEventListener("click", () => {
+  alert("Shield 🛡️");
+});
 about_us.addEventListener("click", openModal);
 
 
@@ -36,10 +41,10 @@ function openModal() {
   const modal = document.getElementById('aboutModal');
   modal.style.display = 'block';
 }
-
 function closeModal() {
   const modal = document.getElementById('aboutModal');
   modal.style.display = 'none';
 }
+
 
 console.log('Script conclude execution here.');
