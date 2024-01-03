@@ -5,6 +5,7 @@ console.log('Script beginnings execution here.');
 let OfficialName = "Sad Inspector"
 let urlLogs = [];
 
+
 // Grab DOMs
 const url_input = document.querySelector("[data-url-input]"); 
 const attack_btn = document.querySelector("[data-attack-btn]");
@@ -14,7 +15,6 @@ const view_source = document.querySelector("[data-view-source]")
 const about_us = document.querySelector("[data-about-us]")
 const web_view = document.querySelector("[data-web-view]");
 
-// let <pre id="sourceCode"></pre>
 
 // Event Listeners
 attack_btn.addEventListener("click", () => {
@@ -45,7 +45,6 @@ web_view.contentWindow.addEventListener("click", () => {
 });
 
 
-
 // Functions
 function openModal() {
   const modal = document.getElementById('aboutModal');
@@ -63,5 +62,6 @@ function viewSource() {
     alert('Iframe content not loaded.');
   }
 }
+
 
 console.log('Script conclude execution here.');
